@@ -12,6 +12,8 @@ body {
 }
 
 body {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
   background-color: #f9f9f9;
 }
 
@@ -117,11 +119,17 @@ button {
   border: 1px solid currentColor;
   border-radius: 2px;
   padding: 5px 11px;
+  transition: all 0.5s;
 }
 
 .sign-in-menu-item button:active,
 .sign-in-menu-item button:focus {
   outline: none;
+}
+
+.sign-in-menu-item button:active {
+  background-color: #999;
+  transition: all 0.5s;
 }
 
 .sign-in-menu-item svg {
@@ -163,6 +171,22 @@ button {
 .info-contents {
   padding: 20px 0 8px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.info-title {
+  background-color: transparent;
+}
+
+.info-contents h1 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: normal;
+  line-height: 1.5rem;
+  max-height: 3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  /* white-space: nowrap; */
 }
 
 .secondary-info-contents {
