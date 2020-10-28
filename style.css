@@ -50,10 +50,6 @@ body {
   color: #606060;
 }
 
-.menu ul {
-  height: 100%;
-}
-
 .menu li {
   height: 40px;
 }
@@ -169,15 +165,30 @@ button {
 }
 
 .info-contents {
-  padding: 20px 0 8px;
+  padding-top: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.info-hashtags {
+  font-size: 0.8rem;
+  line-height: 1rem;
+  max-height: 2rem;
+  overflow: hidden;
+}
+
+.info-hashtags a {
+  text-decoration: none;
+}
+
+.info-hashtags span:not(:last-child) {
+  margin-right: 0.2rem;
 }
 
 .info-title {
   background-color: transparent;
 }
 
-.info-contents h1 {
+.info-title h1 {
   margin: 0;
   font-size: 1.1rem;
   font-weight: normal;
@@ -187,6 +198,78 @@ button {
   text-overflow: ellipsis;
   word-break: break-word;
   /* white-space: nowrap; */
+}
+
+.info-menu {
+  --info-menu-item-height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  color: #606060;
+}
+
+.info-menu div {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.info-menu > div + div {
+  margin-left: 14px;
+}
+
+.info-menu svg {
+  display: block;
+  width: auto;
+  height: var(--info-menu-item-height);
+  padding: 8px;
+  fill: currentColor;
+}
+
+.info-views {
+  flex-grow: 1;
+  font-size: 0.9rem;
+}
+
+.hide {
+  display: none;
+}
+
+.info-element {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.info-likes {
+  position: relative;
+}
+
+.info-likes span:first-of-type {
+  margin-right: 12px;
+}
+
+.info-likes::before,
+.info-likes::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+}
+
+.info-likes::before {
+  background-color: #444;
+  right: 20%;
+  z-index: 1;
+}
+
+.info-likes::after {
+  background-color: #aaa;
+  width: 100%;
+}
+
+.info-share span,
+.info-save span {
+  text-transform: uppercase;
 }
 
 .secondary-info-contents {
@@ -202,5 +285,25 @@ button {
   .header {
     padding-left: 16px;
     padding-right: 16px;
+  }
+}
+
+@media only screen and (min-width: 539px) {
+  .hide-s {
+    display: none;
+  }
+
+  .show-s {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 648px) {
+  .hide-m {
+    display: none;
+  }
+
+  .show-m {
+    display: block;
   }
 }
