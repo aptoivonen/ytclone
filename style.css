@@ -1,8 +1,13 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap"); */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
 :root {
   --header-height: 56px;
+  --separator-line-width: 1px;
+  --separator-line-style: solid;
+  --separator-line-color: rgba(0, 0, 0, 0.1);
+  --gray-1: #606060;
+  --gray-2: rgb(144, 144, 144);
+  --gray-3: rgb(96, 96, 96);
 }
 
 html,
@@ -14,6 +19,7 @@ body {
 body {
   font-family: Roboto, sans-serif;
   font-size: 16px;
+  font-weight: 400;
   background-color: #f9f9f9;
 }
 
@@ -47,7 +53,7 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
-  color: #606060;
+  color: var(--gray-1);
 }
 
 .menu li {
@@ -111,7 +117,10 @@ button {
   color: inherit;
   background-color: #fff;
   cursor: pointer;
-  font-weight: bold;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.007px;
   border: 1px solid currentColor;
   border-radius: 2px;
   padding: 5px 11px;
@@ -166,7 +175,9 @@ button {
 
 .info-contents {
   padding-top: 20px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom-width: var(--separator-line-width);
+  border-bottom-style: var(--separator-line-style);
+  border-bottom-color: var(--separator-line-color);
 }
 
 .info-hashtags {
@@ -204,7 +215,7 @@ button {
   --info-menu-item-height: 40px;
   display: flex;
   justify-content: flex-end;
-  color: #606060;
+  color: var(--gray-2);
 }
 
 .info-menu div {
@@ -237,6 +248,7 @@ button {
   display: flex;
   align-items: center;
   font-size: 0.8rem;
+  font-weight: 500;
 }
 
 .info-likes {
@@ -273,8 +285,95 @@ button {
 }
 
 .secondary-info-contents {
-  padding: 16px 0 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  display: grid;
+  grid-template-columns: min-content auto min-content;
+  grid-template-rows: min-content auto;
+  grid-template-areas:
+    "avatar channel-title subscribe"
+    "avatar description description";
+  padding: 22px 0 16px;
+  margin-bottom: 24px;
+  border-bottom-width: var(--separator-line-width);
+  border-bottom-style: var(--separator-line-style);
+  border-bottom-color: var(--separator-line-color);
+}
+
+.secondary-info-avatar {
+  grid-area: avatar;
+  padding-right: 16px;
+}
+
+.secondary-info-avatar img {
+  width: 48px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.secondary-info-channel-title {
+  grid-area: channel-title;
+  margin-right: 8px;
+}
+
+.channel-title a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.channel-title a:link,
+.channel-title a:hover,
+.channel-title a:active,
+.channel-title a:focus {
+  color: rgb(3, 3, 3);
+}
+
+.channel-verified-badge {
+  width: 13px;
+  height: auto;
+  margin-left: 4px;
+  color: var(--gray-3);
+}
+
+.subscribers {
+  font-size: 0.8rem;
+  color: var(--gray-3);
+  white-space: nowrap;
+}
+
+.secondary-info-subscribe {
+  grid-area: subscribe;
+}
+
+.secondary-info-subscribe-btn {
+  padding: 10px 16px;
+  color: #fff;
+  background-color: rgb(204, 0, 0);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.007px;
+  border: none;
+  border-radius: 2px;
+}
+
+.secondary-info-description {
+  grid-area: description;
+}
+
+.secondary-info-text-content {
+  margin: 1.2rem 0 1.6rem;
+  line-height: 1.2rem;
+  max-height: 2.4rem;
+  font-size: 0.9rem;
+  overflow: hidden;
+}
+
+.secondary-info-showmore {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--gray-3);
+  text-transform: uppercase;
 }
 
 .secondary {
