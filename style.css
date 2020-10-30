@@ -459,8 +459,13 @@ button {
 .video-suggestion-thumbnail::before {
   content: attr(data-duration);
   position: absolute;
-  /* TODO: aikaboxin mitat*/
+  right: 4px;
+  bottom: 8px;
+  padding: 1px 4px;
+  font: 400 14px Roboto;
   color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 2px;
 }
 
 .video-suggestion-title {
