@@ -500,6 +500,10 @@ button {
   border-radius: 2px;
 }
 
+.video-suggestion-info {
+  overflow: hidden;
+}
+
 .video-suggestion-title {
   margin: 0 0 4px;
   max-height: 2.4rem;
@@ -516,6 +520,13 @@ button {
   font-size: 13px;
   font-weight: 400;
   color: var(--gray-3);
+}
+
+.video-suggestion-channel-title span {
+  max-width: 92%;
+  max-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   overflow: hidden;
 }
 
@@ -593,6 +604,9 @@ button {
     min-width: 300px;
     max-width: 402px;
     padding-top: calc(24px + var(--header-height));
+  }
+
+  .video-suggestion-channel-title span {
   }
 }
 
