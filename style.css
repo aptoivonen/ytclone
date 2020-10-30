@@ -165,9 +165,10 @@ button {
 .video-box-container {
   position: relative;
   width: 100%;
-  overflow: hidden;
-  /*padding-top: 62.5%;*/ /* Youtube Aspect Ratio: 56.25%; */
+  max-width: 706px;
+  margin: 0 auto;
   padding-top: 56.25%;
+  overflow: hidden;
 }
 
 .video-box {
@@ -399,9 +400,6 @@ button {
   color: var(--gray-3);
 }
 
-.secondary {
-}
-
 .up-next {
   margin-bottom: 16px;
   padding-bottom: 8px;
@@ -431,13 +429,8 @@ button {
   color: var(--gray-3);
 }
 
-.autoplay-toggle {
-}
-
 .autoplay-toggle input[type="checkbox"] {
   display: none;
-  /* width: 1px; */
-  /* height: 1px; */
 }
 
 .autoplay-toggle label {
@@ -576,4 +569,7 @@ button {
   .show-m {
     display: block;
   }
+}
+
+@media only screen and (min-width: 1017px) {
 }
