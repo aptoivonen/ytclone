@@ -18,9 +18,7 @@ body {
 }
 
 body {
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  font: 400 16px Roboto, sans-serif;
   background-color: #f9f9f9;
 }
 
@@ -572,4 +570,38 @@ button {
 }
 
 @media only screen and (min-width: 1017px) {
+  .wrapper {
+    display: flex;
+    min-width: 1000px;
+    max-width: 1754px;
+    margin: 0 auto;
+  }
+
+  .primary {
+    width: 100%;
+    min-width: 640px;
+    max-width: 706px;
+  }
+
+  .secondary-container {
+    margin-left: 0;
+    margin-right: calc(24px + 10px);
+  }
+
+  .secondary {
+    width: 100%;
+    min-width: 300px;
+    max-width: 402px;
+    padding-top: calc(24px + var(--header-height));
+  }
+}
+
+@media only screen and (min-width: 1231px) {
+  .primary-container {
+    margin-left: auto;
+  }
+
+  .secondary-container {
+    margin-right: auto;
+  }
 }
