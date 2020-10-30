@@ -420,11 +420,52 @@ button {
   color: var(--gray-4);
 }
 
+.up-next-autoplay-container {
+  display: flex;
+}
+
 .up-next-autoplay-container span {
   font-size: 13px;
   font-weight: 500;
   text-transform: uppercase;
   color: var(--gray-3);
+}
+
+.autoplay-toggle {
+}
+
+.autoplay-toggle input[type="checkbox"] {
+  display: none;
+  /* width: 1px; */
+  /* height: 1px; */
+}
+
+.autoplay-toggle label {
+  display: block;
+  width: 36px;
+  height: 14px;
+  position: relative;
+  margin-left: 8px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.autoplay-toggle label::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #909090;
+  border-radius: 50%;
+  top: -3px;
+  left: 0;
+  transition: transform 150ms 1ms ease-in-out;
+}
+
+.autoplay-toggle input[type="checkbox"]:checked ~ label::before {
+  background-color: #065df4;
+  transform: translateX(16px);
+  transition: transform 150ms 1ms ease-in-out;
 }
 
 .video-suggestion {
