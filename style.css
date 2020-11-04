@@ -9,6 +9,7 @@
   --gray-2: rgb(144, 144, 144);
   --gray-3: rgb(96, 96, 96);
   --gray-4: rgb(3, 3, 3);
+  --background-color: #f9f9f9;
 }
 
 html,
@@ -19,7 +20,7 @@ body {
 
 body {
   font: 400 16px Roboto, sans-serif;
-  background-color: #f9f9f9;
+  background-color: var(--background-color);
 }
 
 *,
@@ -36,6 +37,31 @@ body {
   border-bottom-width: var(--separator-line-width);
   border-bottom-style: var(--separator-line-style);
   border-bottom-color: var(--separator-line-color);
+}
+
+/* styles for '...' */
+.text-block {
+  position: relative;
+  text-align: justify;
+  overflow: hidden;
+  padding-right: 1em;
+}
+
+.text-block:before {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  content: "...";
+}
+
+.text-block:after {
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  content: "";
+  background-color: var(--background-color);
 }
 
 .header {
@@ -187,7 +213,6 @@ button {
   font-size: 0.8rem;
   line-height: 1rem;
   max-height: 2rem;
-  overflow: hidden;
 }
 
 .info-hashtags a {
@@ -199,19 +224,11 @@ button {
 }
 
 .info-title {
-  background-color: transparent;
-}
-
-.info-title h1 {
   margin: 0;
   font-size: 1.1rem;
   font-weight: normal;
   line-height: 1.5rem;
   max-height: 3rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  word-break: break-word;
-  /* white-space: nowrap; */
 }
 
 .info-menu {
@@ -312,11 +329,23 @@ button {
 .secondary-info-channel-title {
   grid-area: channel-title;
   margin-right: 8px;
+  overflow: hidden;
 }
 
 .channel-title {
   display: flex;
   align-items: center;
+}
+
+.channel-title span {
+  max-width: 92%;
+  max-height: 24px;
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .channel-title a {
@@ -377,7 +406,6 @@ button {
   line-height: 1.2rem;
   max-height: 2.4rem;
   font-size: 0.9rem;
-  overflow: hidden;
 }
 
 .secondary-info-showmore {
@@ -507,27 +535,26 @@ button {
 .video-suggestion-title {
   margin: 0 0 4px;
   max-height: 2.4rem;
+  line-height: 1.2rem;
   font-size: 0.9rem;
   font-weight: 500;
-  line-height: 1.2rem;
-  overflow: hidden;
 }
 
 .video-suggestion-channel-title {
   display: flex;
   align-items: center;
-  line-height: 18px;
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--gray-3);
 }
 
 .video-suggestion-channel-title span {
   max-width: 92%;
   max-height: 18px;
+  line-height: 18px;
+  font-size: 13px;
+  font-weight: 400;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  color: var(--gray-3);
 }
 
 .video-suggestion-views {
