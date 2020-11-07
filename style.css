@@ -29,6 +29,10 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   margin: 0 24px;
 }
@@ -193,7 +197,7 @@ button {
   border: 1px solid currentColor;
   border-radius: 2px;
   padding: 5px 11px;
-  transition: all 0.5s;
+  transition: background-color 0.5s;
 }
 
 .sign-in-menu-item button:active,
@@ -201,9 +205,13 @@ button {
   outline: none;
 }
 
+.sign-in-menu-item button:focus {
+  border: 2px solid currentColor;
+}
+
 .sign-in-menu-item button:active {
   background-color: #999;
-  transition: all 0.5s;
+  transition: background-color 0.5s;
 }
 
 .sign-in-menu-item svg {
@@ -307,6 +315,12 @@ button {
   align-items: center;
   font-size: 0.8rem;
   font-weight: 500;
+}
+
+.info-element a {
+  display: flex;
+  align-items: center;
+  color: inherit;
 }
 
 .info-likes {
@@ -493,8 +507,15 @@ button {
   color: var(--gray-1);
 }
 
+.autoplay-toggle {
+  display: flex;
+}
+
 .autoplay-toggle input[type="checkbox"] {
-  display: none;
+  /* display: none; */
+  width: 1px;
+  height: 1px;
+  opacity: 0;
 }
 
 .autoplay-toggle label {
@@ -523,6 +544,10 @@ button {
   background-color: #065df4;
   transform: translateX(16px);
   transition: transform 150ms 1ms ease-in-out;
+}
+
+.autoplay-toggle input[type="checkbox"]:focus ~ label {
+  outline: 5px auto rgb(16, 16, 16);
 }
 
 .video-suggestion {
